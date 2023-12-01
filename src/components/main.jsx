@@ -46,7 +46,7 @@ export default class Main extends Component
                 if (success === "OK")
                 {
                     const { header, rows } = data;
-
+                    console.log(json);
                     const MAX_COLUMN_SIZE = 10;
                     const isMaximum = header.length === MAX_COLUMN_SIZE;
 
@@ -82,7 +82,7 @@ export default class Main extends Component
 
         const tableCellStyle = {
             width: NUMBER_WIDTH,
-            fontSize: 18, // 폰트 크기 수정
+            fontSize: 16, // 폰트 크기 수정
         };
 
         return (
@@ -90,14 +90,14 @@ export default class Main extends Component
                 <Box sx={{ width: "100%", height: "100%", overflowY: "scroll", overflowX: "hidden" }}>
                     <TableContainer>
                         <Table sx={{ tableLayout: "fixed" }}>
-                            <TableHead stickyHeader aria-label="sticky table">
+                            <TableHead stickyheader aria-label="sticky table">
                                 <TableRow>
                                     <TableCell sx={tableCellStyle}></TableCell>
                                     {
                                         header.map((e, i) =>
                                         {
                                             return (
-                                                e === "" ? <TableCell key={i}>{e}</TableCell> : <TableCell sx={{ width: CELL_WIDTH, fontSize: 18 }} key={i}>{e}</TableCell>
+                                                e === "" ? <TableCell key={i}>{e}</TableCell> : <TableCell sx={{ width: CELL_WIDTH, fontSize: 24 }} key={i}>{e}</TableCell>
                                             );
                                         })
                                     }
@@ -112,7 +112,7 @@ export default class Main extends Component
                                             {
                                                 e.map((cell, cellIndex) =>
                                                 {
-                                                    return <OverflowText width={CELL_WIDTH} key={cellIndex} text={cell.replace(/,/g, ", ")}></OverflowText>
+                                                    return <OverflowText  width={CELL_WIDTH} key={cellIndex} text={cell.replace(/,/g, ", ")}></OverflowText>
                                                 })
                                             }
                                         </TableRow>

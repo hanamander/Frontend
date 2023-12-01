@@ -206,7 +206,9 @@ export default class dbsearchc extends Component
 				{
 					const rows = data.map(e => 
 					{
+						console.log("ffff");
 						const score = JSON.parse(e.score).map(s => s.value);
+						
 						return { id: e.id, serialNumber: e.sn, timestamp: e.timestamp, dataFilename: e.data_filename, score: score.toString(), tags: JSON.parse(e.tags).toString() };
 					});
 

@@ -1,0 +1,13 @@
+NPF_{BF03B186-B885-48D5-AA37-DE8D9E5A5E67}
+
+C:/Users/hanam/Desktop/AETHER_IRIS_BackPy-master/FTP
+
+insert into measure_data(measure_id, sn, timestamp, filename, score, tags,mi,si) VALUES('12', 111, 20231021142536,'122_20230717154501.txt', 99.9, 1,2,1);
+insert into device(measure_id, sn, timestamp, filename, score, tags,mi,si) VALUES('12', 111, 20231021142536,'122_20230717154501.txt', 99.9, 1,2,1);
+
+npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+react-dom.development.js:86 Warning: Function components cannot be given
+react-dom.development.js:86 Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?
+
+UPDATE `aether_iris`.`measure_data` SET `score`='{ "id": 11231, "values": {"eq": 1, "value": 99} }' WHERE  `id`=11481;

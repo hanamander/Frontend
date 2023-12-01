@@ -195,12 +195,13 @@ export default class MeasureDialogContent extends Component
                                 score.push(`(${e.id},${onlyNumber},${v.value})`);
                             }
                         }
-
+                        console.log(row.data_filename);
                         return {
                             id: row.id,
                             serialNumber: row.sn,
                             timestamp: row.timestamp,
                             dataFilename: row.data_filename,
+                            
                             score: score.toString(),
                             tags: JSON.parse(row.tags).toString()
                         };

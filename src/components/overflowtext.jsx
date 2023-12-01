@@ -47,10 +47,11 @@ export default class OverflowText extends Component
 		const { width, key, text } = this.props;
 		const { overflowActive } = this.state;
 
-		return (
+		return ( //hanam
 			<TableCell
 				sx={{
 					width: width,
+					fontSize: 36,
 					textOverflow: "ellipsis",
 					whiteSpace: "nowrap",
 					overflow: "hidden",
