@@ -14,6 +14,7 @@ export const TABLE_HEAD_COLOR = "#f5f5dc";
 export const EQ_COLORS = { EQ1: "red", EQ2: "orange", EQ3: "yellow", EQ4: "green", EQ5: "blue", EQ6: "purple" };
 
 export const SERVER_URL = "http://127.0.0.1:3001";
+//export const SERVER_URL = "http://220.81.226.143:3001";
 
 export const deepCopy = (object) =>
 {

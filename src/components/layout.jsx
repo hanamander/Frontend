@@ -169,7 +169,7 @@ export default class Layout extends Component
 
         this.state = {
             value: 0,
-            isExpanded: false,
+            isexpanded: false,
             showTextFieldAndButton: false,
             password: "",
             anchorEl: null,
@@ -303,7 +303,7 @@ export default class Layout extends Component
                     this.signMaster = false;
 
                     this.setState({
-                        isExpanded: false,
+                        isexpanded: false,
                         password: "",
                         value: 0,
                     });
@@ -332,12 +332,12 @@ export default class Layout extends Component
 
     handleLoginInfoClick = () =>
     {
-        this.setState((prevState) => ({ isExpanded: !prevState.isExpanded, }), () =>
+        this.setState((prevState) => ({ isexpanded: !prevState.isexpanded, }), () =>
         {
-            const { isExpanded, value } = this.state;
+            const { isexpanded, value } = this.state;
             const newValue = this.signMaster === false ? 0 : value;
 
-            if (isExpanded)
+            if (isexpanded)
             {
                 setTimeout(() =>
                 {
@@ -362,10 +362,11 @@ export default class Layout extends Component
 
         const { password } = this.state;
 
-        if (password === "")
-        {
-            return;
-        }
+        //if (password === "")//hanam
+        //    return;
+        //{
+        //    console.log("return");
+        //}
 
         fetch(`${SERVER_URL}/sign-in`, {
             method: "POST",
@@ -373,6 +374,7 @@ export default class Layout extends Component
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ password }),
+            
         })
             .then((response) => response.json())
             .then((json) =>
@@ -419,7 +421,7 @@ export default class Layout extends Component
                             </LayoutTopBox>
                             <LoginInfoBox
                                 ref={this.loginInfoBoxRef}
-                                isExpanded={this.state.isExpanded}
+                                isexpanded={this.state.isexpanded}
                             >
                                 <Box
                                     display="flex"
@@ -434,19 +436,19 @@ export default class Layout extends Component
                                         borderRadius: "0px 10px 0px 0px",
                                     }}
                                 >
-                                    <Typography isExpanded={this.state.isExpanded} onClick={this.handleLoginInfoClick} sx={{ position: "absolute", fontSize: 20 }}>
+                                    <Typography isexpanded={this.state.isexpanded} onClick={this.handleLoginInfoClick} sx={{ position: "absolute", fontSize: 20 }}>
                                         {loggedIn ? "Master" : "User"}
                                     </Typography>
                                     <IconButton
                                         size="small"
                                         sx={{ position: "absolute", right: 70, color: "white" }}
-                                        isExpanded={this.state.isExpanded}
+                                        isexpanded={this.state.isexpanded}
                                         onClick={this.handleLoginInfoClick}
                                     >
-                                        {this.state.isExpanded ? <ExpandLess /> : <ExpandMore />}
+                                        {this.state.isexpanded ? <ExpandLess /> : <ExpandMore />}
                                     </IconButton>
                                 </Box>
-                                {this.state.isExpanded && this.state.showTextFieldAndButton && (
+                                {this.state.isexpanded && this.state.showTextFieldAndButton && (
                                     <ZoomBox mt={5} className="zoom-in" display="flex" flexDirection="column">
                                         {!loggedIn ? (
                                             // 로그인 상태가 아닐 때 로그인 버튼을 표시

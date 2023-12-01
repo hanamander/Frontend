@@ -43,7 +43,6 @@ export default class MeasureDeviceListBox extends Component
     render()
     {
         const { deviceList, serialNumber, handleItemClick } = this.props;
-
         return (
             <Box height="100%" backgroundColor="white" overflowX="hidden" overflowY="auto">
                 {

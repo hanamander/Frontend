@@ -124,11 +124,10 @@ export default class MeasureTable extends Component
     render()
     {
         const { start, refs } = this.props;
-
         return (
             <Paper>
                 <TableContainer sx={{ height: "270px" }}>
-                    <Table stickyHeader aria-label="sticky table" size="small">
+                    <Table stickyheader aria-label="sticky table" size="small">
                         <TableHead>
                             <TableRow>
                                 <TableCellHead align="center" colSpan={4}>
@@ -155,11 +154,11 @@ export default class MeasureTable extends Component
                         </TableHead>
                         <TableBody>
                             {
-                                refs.map((ref, index) => (
+                                refs.map((ref, index) => (                                    
                                     <TableRow hover role="checkbox" tabIndex={-1} key={ref.code}>
                                         {
                                             columns.map((column) =>
-                                            {
+                                            {                                                
                                                 const value = ref[column.id];
                                                 if (column.id === "check")
                                                 {
